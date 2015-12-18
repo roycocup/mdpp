@@ -1,6 +1,7 @@
 package uk.co.rodderscode.mdpp;
 
 
+import uk.co.rodderscode.mdpp.exceptions.NotAValidMdppFile;
 import uk.co.rodderscode.utils.Printer;
 
 import java.io.File;
@@ -14,7 +15,7 @@ public class MdPlusPlus implements MdFile {
     public MdPlusPlus(String filename) throws Exception {
         setFilename(filename);
         if( !isMarkdown() )
-            throw new Exception("File is not valid markdown file (.md)");
+            throw new NotAValidMdppFile("File is not valid markdown file (.md)");
     }
 
     public void setFilename(String filename) {
@@ -23,12 +24,11 @@ public class MdPlusPlus implements MdFile {
 
     public String getFilename() {return this.filename;}
 
-    //TODO: Needs to handle several dots and full paths
     public Boolean isMarkdown() {
         try {
-            int dotIndex = filename.indexOf(".")+1; //otherwise the dot will be included
+            int dotIndex = filename.lastIndexOf(".")+1; //otherwise the dot will be included
             String extension = filename.substring(dotIndex);
-            return extension.equals("md") ? true : false;
+            return extension.equals("md");
         }catch (Exception e){
             System.err.println(e.getMessage());
             return false;
