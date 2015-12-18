@@ -25,16 +25,28 @@ public class MdPlusPlusTest {
     }
 
     @Test
-    public void fileIsShouldBeSet() {
+    public void testSetFilename() throws Exception {
         assertNotNull("Variable for filename should not be null", mdPlusPlus.getFilename());
         assertEquals("Filename should be "+filename1.toString(), filename1, mdPlusPlus.getFilename());
     }
 
     @Test
-    public void fileIsMarkDown(){
+    public void testGetFilename() throws Exception {
+        String somefilename = "another.md";
+        mdPlusPlus.setFilename(somefilename);
+        assertEquals("Filename should be the same", somefilename, mdPlusPlus.getFilename());
+    }
+
+    @Test
+    public void testIsMarkdown() throws Exception {
         assertTrue("Input file has md extension", mdPlusPlus.isMarkdown());
 
         mdPlusPlus.setFilename("something.tar.md");
         assertTrue("Files with more than one dot are not handled", mdPlusPlus.isMarkdown());
+    }
+
+    @Test
+    public void testParse() throws Exception {
+        
     }
 }
