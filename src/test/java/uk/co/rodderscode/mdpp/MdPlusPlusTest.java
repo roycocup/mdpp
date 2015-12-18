@@ -1,0 +1,40 @@
+package uk.co.rodderscode.mdpp;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import uk.co.rodderscode.utils.Printer;
+
+import static org.junit.Assert.*;
+
+
+public class MdPlusPlusTest {
+
+
+    String filename1 = "mockup.md";
+    MdPlusPlus mdPlusPlus = null;
+
+    @Before
+    public void before(){
+
+        try{
+            mdPlusPlus = new MdPlusPlus(filename1);
+        }catch (Exception e){
+            Printer.err("Error constructing mdPlusPlus");
+        }
+    }
+
+    @Test
+    public void fileIsShouldBeSet() {
+        assertNotNull("Variable for filename should not be null", mdPlusPlus.getFilename());
+        assertEquals("Filename should be "+filename1.toString(), filename1, mdPlusPlus.getFilename());
+    }
+
+    @Test
+    public void fileIsMarkDown(){
+        assertTrue("Input file has md extension", mdPlusPlus.isMarkdown());
+
+        mdPlusPlus.setFilename("something.tar.md");
+        assertTrue("Files with more than one dot are not handled", mdPlusPlus.isMarkdown());
+    }
+}

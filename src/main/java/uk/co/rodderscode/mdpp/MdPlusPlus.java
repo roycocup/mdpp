@@ -3,11 +3,15 @@ package uk.co.rodderscode.mdpp;
 
 import uk.co.rodderscode.utils.Printer;
 
-public class MarkdownPlusPlus implements MarkdownFile {
+import java.io.File;
+import java.util.Scanner;
 
-    private String filename;
+public class MdPlusPlus implements MdFile {
 
-    public MarkdownPlusPlus(String filename) throws Exception {
+    private String filename = null;
+    private File inputFile = null;
+
+    public MdPlusPlus(String filename) throws Exception {
         setFilename(filename);
         if( !isMarkdown() )
             throw new Exception("File is not valid markdown file (.md)");
@@ -19,13 +23,7 @@ public class MarkdownPlusPlus implements MarkdownFile {
 
     public String getFilename() {return this.filename;}
 
-    public MDPPDocument parse(){
-
-        MDPPDocument doc = new MDPPDocument();
-        return doc;
-    }
-
-
+    //TODO: Needs to handle several dots and full paths
     public Boolean isMarkdown() {
         try {
             int dotIndex = filename.indexOf(".")+1; //otherwise the dot will be included
@@ -35,5 +33,22 @@ public class MarkdownPlusPlus implements MarkdownFile {
             System.err.println(e.getMessage());
             return false;
         }
+    }
+
+    public MDPPDocument parse() {
+        loadInputFile();
+        try {
+            Scanner scanner = new Scanner(inputFile);
+        }catch (Exception e){
+            Printer.err("Issue with scanner");
+            return null;
+        }
+
+        MDPPDocument doc = new MDPPDocument();
+        return doc;
+    }
+
+    private void loadInputFile() {
+        inputFile = new File(filename);
     }
 }

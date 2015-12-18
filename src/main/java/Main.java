@@ -2,8 +2,7 @@ import java.io.File;
 
 
 import uk.co.rodderscode.mdpp.MDPPDocument;
-import uk.co.rodderscode.mdpp.MarkdownPlusPlus;
-import uk.co.rodderscode.utils.Printer;
+import uk.co.rodderscode.mdpp.MdPlusPlus;
 
 public class Main {
 
@@ -15,9 +14,9 @@ public class Main {
         inputFilename = args[0];
         outputFilename = args[1];
 
-        MarkdownPlusPlus mdpp = null;
+        MdPlusPlus mdpp = null;
         try {
-            mdpp = new MarkdownPlusPlus(inputFilename);
+            mdpp = new MdPlusPlus(inputFilename);
         }catch (Exception e){
             System.err.println(e.getMessage());
             System.exit(0);
