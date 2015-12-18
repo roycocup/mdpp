@@ -1,6 +1,6 @@
 package uk.co.rodderscode.mdpp;
 
 
-public class MDPPDocument {
+public class MdppDocument {
 
 }

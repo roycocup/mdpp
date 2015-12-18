@@ -1,6 +1,5 @@
 package uk.co.rodderscode.mdpp;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import uk.co.rodderscode.utils.Printer;
@@ -8,17 +7,17 @@ import uk.co.rodderscode.utils.Printer;
 import static org.junit.Assert.*;
 
 
-public class MdPlusPlusTest {
+public class MdppTest {
 
 
     String filename1 = "mockup.md";
-    MdPlusPlus mdPlusPlus = null;
+    Mdpp mdPlusPlus = null;
 
     @Before
     public void before(){
 
         try{
-            mdPlusPlus = new MdPlusPlus(filename1);
+            mdPlusPlus = new Mdpp(filename1);
         }catch (Exception e){
             Printer.err("Error constructing mdPlusPlus");
         }
