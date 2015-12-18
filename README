@@ -4,7 +4,7 @@ This program is a compiler for a markdown++ language.
 
 ### Usage:
 
-Java jtex nameOfFile.tex NameOfOutputFile.txt
+Java jtex nameOfFile.md NameOfOutputFile.txt
 
 
 ### Requirements
