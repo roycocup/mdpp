@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Jan 18, 2008 3:36:02 PM                                                        
+
+     jTeX    
+     jTeX LaTeX library
+                   
+     Matej Usaj                                                                
+     ====================================================================== -->
+<project name="jTeX" default="dist" basedir=".">
+    <property file="build.properties"/>
+    <property file="project.properties"/>
+    <taskdef resource="${proguard.task.properties}"
+             classpath="${proguard.lib.file}"/>
+
+    <tstamp>
+      <format property="build.date" pattern="yyyyMMdd" />
+    </tstamp>
+    
+    <description>
+            jTeX LaTeX library
+    </description>
+
+    <target name="init">
+        <buildnumber file="build.num"/>
+        <property name="tar.prefix"
+            value="${dir.dist}/${proj.name}-${proj.ver}-b${build.number}"/>
+        
+        <property name="tar.bin.tmp"
+            value="${tar.prefix}-bin.tar"/>
+        <property name="tar.src.tmp"
+            value="${tar.prefix}-src.tar"/>
+
+        <property name="tar.bin.gz"
+            value="${tar.prefix}-bin.tar.gz"/>
+        <property name="tar.bin.bz2"
+            value="${tar.prefix}-bin.tar.bz2"/>
+        <property name="tar.src.gz"
+            value="${tar.prefix}-src.tar.gz"/>
+        <property name="tar.src.bz2"
+            value="${tar.prefix}-src.tar.bz2"/>
+        <property name="jar.out"
+            value="${dir.dist}/${proj.name}.jar"/>
+        
+        <condition property="post.optimize">
+            <not>
+                <isset property="proguard.do.optimize"/>
+            </not>
+        </condition>
+    </target>
+
+    <!-- ================================= 
+          target: clean              
+         ================================= -->
+    <target name="clean" description="--> Clean dist files">
+        <delete dir="${dir.dist}" failonerror="false"/>
+        <delete dir="${dir.build}" failonerror="false"/>
+    </target>
+
+    <!-- ================================= 
+          target: build              
+         ================================= -->
+    <target name="build" depends="init,clean" description="--> Build source">
+        <mkdir dir="${dir.build}"/>
+        <javac srcdir="${dir.src}"
+            destdir="${dir.build}"
+            debug="on"
+            encoding="UTF-8"/>
+    </target>
+    
+    <!-- ================================= 
+          target: jar              
+         ================================= -->
+    <target name="jar" depends="build" description="--> Pack classes">
+        <mkdir dir="${dir.dist}"/>
+        <jar destfile="${jar.tmp}"
+            basedir="${dir.build}" />
+    </target>
+
+    
+    <!-- ================================= 
+          target: optimize              
+         ================================= -->
+    <target name="optimize" depends="jar" if="proguard.do.optimize" description="--> Optimize classes">
+        <proguard skipnonpubliclibraryclasses="true"
+            skipnonpubliclibraryclassmembers="true"
+            printconfiguration="true"
+            optimizationpasses="3"
+            allowaccessmodification="true"
+            optimize="true"
+            obfuscate="false"
+            preverify="false"
+            verbose="true">
+            <libraryjar location="${java.home}"/>
+            <keep/>
+            <injar file="${jar.tmp}"/>
+            <outjar file="${jar.out}"/>
+        </proguard>
+        <delete file="${jar.tmp}"/>
+    </target>
+    
+    <!-- ================================= 
+          target: post_optimize              
+         ================================= -->
+    <target name="post_optimize" depends="optimize" if="post.optimize" description="--> Do not optimize classes">
+        <move file="${jar.tmp}" tofile="${jar.out}" failonerror="false" verbose="true"/>
+    </target>
+
+    <!-- ================================= 
+          target: dist              
+         ================================= -->
+    <target name="dist" depends="post_optimize" description="--> jTeX LaTeX library">
+        <tar destfile="${tar.src.bz2}" compression="bzip2">
+            <tarfileset  dir="${dir.base}">
+                <include name="lib/**"/>
+                <include name="src/**"/>
+                <include name="build.*"/>
+                <include name="project.*"/>
+            </tarfileset>
+        </tar>
+        <tar destfile="${tar.src.gz}" compression="gzip">
+            <tarfileset  dir="${dir.base}">
+                <include name="lib/**"/>
+                <include name="src/**"/>
+                <include name="build.*"/>
+                <include name="project.*"/>
+            </tarfileset>
+        </tar>
+
+        <tar destfile="${tar.bin.bz2}" compression="bzip2">
+            <tarfileset dir="${dir.dist}">
+                <include name="*.jar"/>
+            </tarfileset>
+        </tar>
+        <tar destfile="${tar.bin.gz}" compression="gzip">
+            <tarfileset dir="${dir.dist}">
+                <include name="*.jar"/>
+            </tarfileset>
+        </tar>
+    </target>
+</project>

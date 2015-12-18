@@ -1,0 +1,21 @@
+#Fri Jan 18 16:42:46 CET 2008
+# Set path to Java JRE location
+java.home=
+
+dir.base=.
+dir.lib=${dir.base}/lib
+dir.src=${dir.base}/src
+dir.build=${dir.base}/build
+dir.dist=${dir.base}/dist
+
+num.build=${dir.base}/build.num
+num.version=${dir.base}/version.num
+
+proguard.lib.file=${dir.lib}/proguard.jar
+proguard.task.properties=proguard/ant/task.properties
+
+# Comment this out if you don't want to optimize classes
+proguard.do.optimize=
+
+# Don't change this yet!! Build will fail
+jar.tmp=${dir.dist}/out.jar
