@@ -34,7 +34,25 @@ public class Lexer {
                 tokens.add(Syntax.LIST);
                 break;
             default:
-                tokens.add(Syntax.CHARACTER);
+                if (Character.isDigit(c) == true){
+                    tokens.add(Syntax.INTEGER);
+                } else if (Character.isLetter(c)){
+                    tokens.add(Syntax.CHARACTER);
+                    break;
+                } else {
+                    int type = Character.getType(c);
+                    if (type == Character.END_PUNCTUATION) {
+                        tokens.add(Syntax.PUNCTUATION);
+                        break;
+                    } else if (type == Character.OTHER_PUNCTUATION){
+                        tokens.add(Syntax.PUNCTUATION);
+                        break;
+                    }else{
+                        Printer.log("found type: "+type+" when tokanizing string");
+                        tokens.add(Syntax.WEIRD_SHIT);
+                        break;
+                    }
+                }
                 break;
         }
     }
@@ -50,5 +68,9 @@ public class Lexer {
         CHARACTER,
         TITLE,
         LIST,
+        INTEGER,
+        PUNCTUATION,
+        DASH,
+        WEIRD_SHIT
     }
 }
