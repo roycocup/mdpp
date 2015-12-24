@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3bbee6f-9d3b-4372-a6e2-666b7be64b58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" afterPath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
     </list>
     <ignored path="Jtex.iws" />
@@ -38,24 +36,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Mdpp.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Mdpp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.8471178">
+              <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -148,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/utils/Printer.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java" />
         <option value="/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/src.zip!/java/util/ArrayList.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
       </list>
     </option>
   </component>
@@ -732,7 +720,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450989246680</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Almost there">
+      <created>1450996818167</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1450996818167</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -815,7 +809,8 @@
     <MESSAGE value="Going a bit deeper and seeing where I can get first without much thinking" />
     <MESSAGE value="Tokenizer working" />
     <MESSAGE value="No need to have a complex thing on tokenizer" />
-    <option name="LAST_COMMIT_MESSAGE" value="No need to have a complex thing on tokenizer" />
+    <MESSAGE value="Almost there" />
+    <option name="LAST_COMMIT_MESSAGE" value="Almost there" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1207,16 +1202,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="38" selection-start-line="43" selection-start-column="38" selection-end-line="43" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1227,6 +1212,14 @@
             <element signature="e#478#479#0" expanded="true" />
             <element signature="e#516#517#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1242,11 +1235,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.8471178">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

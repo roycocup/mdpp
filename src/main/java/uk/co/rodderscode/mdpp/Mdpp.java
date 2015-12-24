@@ -6,12 +6,15 @@ import uk.co.rodderscode.utils.Printer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Mdpp {
 
     private String filename = null;
     private File inputFile = null;
+    public ArrayList<HashMap<Integer, String>> AST = new ArrayList<>();
 
     public Mdpp(String filename) throws NotValidMdppFile {
         setFilename(filename);
@@ -39,13 +42,18 @@ public class Mdpp {
 
         Scanner scanner = new Scanner(inputFile);
 
+        int line = 0;
         while(scanner.hasNext()){
             String next = scanner.nextLine();
             Lexer lexer = new Lexer();
             lexer.tokenize(next);
-            Printer.pl(next);
-            Printer.pl(lexer.getTokenized());
+            HashMap hm = new HashMap();
+            hm.put(line++, lexer.getTokenized());
+            AST.add(hm);
+            line++;
         }
+
+        Printer.pl(AST);
 
     }
 
