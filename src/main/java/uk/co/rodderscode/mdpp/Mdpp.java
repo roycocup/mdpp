@@ -40,11 +40,16 @@ public class Mdpp {
         Scanner scanner = new Scanner(inputFile);
         Lexer lexer = new Lexer();
 
+        String line = scanner.nextLine();
+        lexer.tokenize(line);
+        Printer.pl(lexer.getTokenized());
+        /*
         while(scanner.hasNext()){
-            String next = scanner.next().toString();
+            String next = scanner.nextLine();
             lexer.tokenize(next);
-//            Printer.pl(lexer.getTokenized());
+            Printer.pl(lexer.getTokenized());
         }
+        */
 
     }
 

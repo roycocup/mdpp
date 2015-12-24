@@ -14,12 +14,10 @@ public class Lexer {
 
 
     public void tokenize(String str) {
-        Printer.pl(str);
         MdppScanner scanner = new MdppScanner(str);
         while (scanner.hasNext() == true) {
             char c = scanner.readNext();
             convertToToken(c);
-//            Printer.pl(getTokenized());
         }
 
     }
