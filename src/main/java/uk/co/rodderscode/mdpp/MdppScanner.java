@@ -23,15 +23,11 @@ public class MdppScanner{
     }
 
     char readNext(){
-        char c = get();
-        position++;
-        return c;
+        return get(position++);
     }
 
     char readPrev(){
-        char c = get();
-        position--;
-        return c;
+        return get(position--);
     }
 
 

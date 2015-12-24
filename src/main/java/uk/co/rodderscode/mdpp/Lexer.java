@@ -45,10 +45,6 @@ public class Lexer {
     }
 
 
-    enum Commands{
-
-    }
-
     enum Syntax{
         WHITESPACE,
         CHARACTER,
