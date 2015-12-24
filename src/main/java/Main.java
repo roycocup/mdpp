@@ -1,9 +1,7 @@
 import java.io.File;
 
 
-import uk.co.rodderscode.mdpp.MdppDocument;
 import uk.co.rodderscode.mdpp.Mdpp;
-import uk.co.rodderscode.utils.Printer;
 
 public class Main {
 
@@ -15,16 +13,13 @@ public class Main {
         inputFilename = args[0];
         outputFilename = args[1];
 
-        Mdpp mdpp = null;
         try {
-            mdpp = new Mdpp(inputFilename);
-            MdppDocument newDocument = mdpp.parse();
-            outputFilename = newDocument.toString();
+            Mdpp mdpp = new Mdpp(inputFilename);
+            mdpp.parse();
         }catch (Exception e){
-            System.err.println(e.getClass());
+            e.printStackTrace();
             System.exit(0);
         }
-
 
     }
 

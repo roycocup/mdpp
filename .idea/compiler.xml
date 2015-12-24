@@ -27,8 +27,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="Jtex" target="1.8" />
-      <module name="MarkdownPlusPlus" target="1.5" />
+      <module name="MarkdownPlusPlus" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -36,13 +36,6 @@ public class MdppTest {
         assertEquals("Filename should be the same", somefilename, mdPlusPlus.getFilename());
     }
 
-    @Test
-    public void testIsMarkdown() throws Exception {
-        assertTrue("Input file has md extension", mdPlusPlus.isMarkdown());
-
-        mdPlusPlus.setFilename("something.tar.md");
-        assertTrue("Files with more than one dot are not handled", mdPlusPlus.isMarkdown());
-    }
 
     @Test
     public void testParse() throws Exception {

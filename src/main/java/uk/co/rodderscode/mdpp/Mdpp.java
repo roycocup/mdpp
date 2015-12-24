@@ -2,12 +2,13 @@ package uk.co.rodderscode.mdpp;
 
 
 import uk.co.rodderscode.mdpp.exceptions.NotValidMdppFile;
+import uk.co.rodderscode.utils.Printer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-public class Mdpp implements MdFile {
+public class Mdpp {
 
     private String filename = null;
     private File inputFile = null;
@@ -18,29 +19,33 @@ public class Mdpp implements MdFile {
             throw new NotValidMdppFile("File is not valid markdown file (.md)");
     }
 
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
 
+    public void setFilename(String filename) {this.filename = filename;}
     public String getFilename() {return this.filename;}
 
-    public Boolean isMarkdown() {
+    /**
+     * Checks if the file has a valid .md extension
+     * @return boolean
+     */
+    private Boolean isMarkdown() {
         int dotIndex = filename.lastIndexOf(".")+1; //otherwise the dot will be included
         String extension = filename.substring(dotIndex);
         return extension.equals("md");
     }
 
-    public MdppDocument parse() throws FileNotFoundException {
+
+    public void parse() throws FileNotFoundException {
         loadInputFile();
 
         Scanner scanner = new Scanner(inputFile);
+        Lexer lexer = new Lexer();
 
         while(scanner.hasNext()){
-            SyntaxNode.isCommand(scanner.next().toString());
+            String next = scanner.next().toString();
+            lexer.tokenize(next);
+//            Printer.pl(lexer.getTokenized());
         }
 
-        MdppDocument doc = new MdppDocument();
-        return doc;
     }
 
     private void loadInputFile() {
