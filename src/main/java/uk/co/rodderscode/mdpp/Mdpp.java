@@ -1,20 +1,21 @@
 package uk.co.rodderscode.mdpp;
 
 
+import uk.co.rodderscode.doccreator.SpecialDocFactory;
+import uk.co.rodderscode.doccreator.SpecialDocument;
+import uk.co.rodderscode.doccreator.TargetType;
 import uk.co.rodderscode.mdpp.exceptions.NotValidMdppFile;
-import uk.co.rodderscode.utils.Printer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 public class Mdpp {
 
     private String filename = null;
     private File inputFile = null;
     public ArrayList<HashMap<Integer, String>> AST = new ArrayList<>();
+    private SpecialDocument document;
 
     public Mdpp(String filename) throws NotValidMdppFile {
         setFilename(filename);
@@ -36,6 +37,10 @@ public class Mdpp {
         return extension.equals("md");
     }
 
+    private void loadInputFile() {
+        inputFile = new File(filename);
+    }
+
 
     public void parse() throws FileNotFoundException {
         loadInputFile();
@@ -53,11 +58,50 @@ public class Mdpp {
             line++;
         }
 
-        Printer.pl(AST);
+//        Printer.pl(AST);
 
     }
 
-    private void loadInputFile() {
-        inputFile = new File(filename);
+
+    public void compileTo(TargetType type){
+        //TODO: support other types
+        compile();
     }
+
+    public void compile() {
+
+        SpecialDocument document = SpecialDocFactory.getDocInstance(TargetType.HTML);
+        Iterator<HashMap<Integer, String>> iterator = AST.iterator();
+
+        // Line by line
+        while(iterator.hasNext()){
+            HashMap<Integer, String> hm = iterator.next();
+            Collection values = hm.values();
+
+            // Token by token
+            Iterator<Syntax> i2 = values.iterator();
+            while(i2.hasNext()) {
+                switch (i2.next()) {
+                    case TITLE:
+                        break;
+                    case INTEGER:
+                        break;
+                    case LIST:
+                        break;
+                    case PUNCTUATION:
+                        break;
+                    case DASH:
+                    case WEIRD_SHIT:
+                        break;
+                    case WHITESPACE:
+                    case CHARACTER:
+                        break;
+
+                }
+            }
+        }
+
+//        Printer.pl(document.getOutput());
+    }
+
 }

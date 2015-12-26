@@ -1,6 +1,7 @@
 import java.io.File;
 
 
+import uk.co.rodderscode.doccreator.TargetType;
 import uk.co.rodderscode.mdpp.Mdpp;
 
 public class Main {
@@ -16,6 +17,7 @@ public class Main {
         try {
             Mdpp mdpp = new Mdpp(inputFilename);
             mdpp.parse();
+            mdpp.compileTo(TargetType.HTML);
         }catch (Exception e){
             e.printStackTrace();
             System.exit(0);

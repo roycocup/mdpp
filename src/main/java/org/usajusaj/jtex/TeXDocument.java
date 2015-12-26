@@ -53,7 +53,7 @@ public class TeXDocument implements TeXItemEventListener
    * manipulation will have no effect!
    * 
    * @param filePath  Destination LaTeX file
-   * @param c         Document class for this file
+   * @param c         SpecialDocument class for this file
    * 
    * @throws TeXInvalidFileException Given path is a directory
    * @throws TeXIOException          Problem writing to disk
@@ -71,7 +71,7 @@ public class TeXDocument implements TeXItemEventListener
    * manipulation will have no effect!
    * 
    * @param filePath Destination LaTeX file
-   * @param c        Document class for this file
+   * @param c        SpecialDocument class for this file
    * @param p        Package collection for this document
    * 
    * @throws TeXInvalidFileException Given path is a directory

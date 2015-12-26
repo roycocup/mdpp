@@ -48,7 +48,7 @@ public class Lexer {
                         tokens.add(Syntax.PUNCTUATION);
                         break;
                     }else{
-                        Printer.log("found type: "+type+" when tokanizing string");
+                        Printer.log("found type: "+type+" when tokenizing string");
                         tokens.add(Syntax.WEIRD_SHIT);
                         break;
                     }
@@ -62,15 +62,4 @@ public class Lexer {
         return tokens.toString();
     }
 
-
-    enum Syntax{
-        WHITESPACE,
-        CHARACTER,
-        TITLE,
-        LIST,
-        INTEGER,
-        PUNCTUATION,
-        DASH,
-        WEIRD_SHIT
-    }
 }
