@@ -74,15 +74,20 @@ public class Mdpp {
             ArrayList<Syntax> line = iterator.next();
 
             // Token by token
+            List<Syntax> constants = Syntax.getAll(); // all the constants from Syntax enum
             for (Syntax node : line){
-                switch (node){
-                    case TITLE:
-                        break;
+                if(constants.contains(node)) {
+                    // Dynamically call the enum constant and send it to a react method
+                    react(Syntax.valueOf(node.toString()));
                 }
             }
         }
 
-        Printer.pl(document.getFinal());
+//        Printer.pl(document.getFinal());
+    }
+
+    private void react(Syntax syntax) {
+        Printer.pl(syntax);
     }
 
 }
