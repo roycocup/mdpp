@@ -3,8 +3,6 @@ package uk.co.rodderscode.mdpp;
 import uk.co.rodderscode.utils.Printer;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.regex.Pattern;
 
 public class Lexer {
 
@@ -58,8 +56,8 @@ public class Lexer {
     }
 
 
-    String getTokenized(){
-        return tokens.toString();
+    ArrayList<Syntax> getTokenized(){
+        return tokens;
     }
 
 }

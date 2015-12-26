@@ -13,7 +13,7 @@ public class Mdpp {
 
     private String filename = null;
     private File inputFile = null;
-    public ArrayList<HashMap<Integer, String>> AST = new ArrayList<>();
+    public List<ArrayList<Syntax>> AST = new ArrayList<>();
     private SpecialDocument document;
 
     public Mdpp(String filename) throws NotValidMdppFile {
@@ -51,10 +51,7 @@ public class Mdpp {
         while(scanner.hasNext()){
             String next = scanner.nextLine();
             lexer.tokenize(next);
-            HashMap hm = new HashMap();
-            hm.put(line++, lexer.getTokenized());
-            AST.add(hm);
-            line++;
+            AST.add(lexer.getTokenized());
         }
 
 //        Printer.pl(AST);
@@ -70,16 +67,19 @@ public class Mdpp {
     public void compile() {
 
         SpecialDocument document = SpecialDocFactory.getInstance(TargetType.HTML);
-        Iterator<HashMap<Integer, String>> iterator = AST.iterator();
+        Iterator<ArrayList<Syntax>> iterator = AST.iterator();
 
         // Line by line
         while(iterator.hasNext()){
-            HashMap<Integer, String> hm = iterator.next();
-            Collection values = hm.values();
+            ArrayList<Syntax> line = iterator.next();
 
             // Token by token
-//            SpecialIterator runner = new SpecialIterator(values);
-
+            for (Syntax node : line){
+                switch (node){
+                    case TITLE:
+                        break;
+                }
+            }
         }
 
         Printer.pl(document.getFinal());

@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d3bbee6f-9d3b-4372-a6e2-666b7be64b58" name="Default" comment="Need to redo AST">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/SpecialIterator.java" />
+    <list default="true" id="d3bbee6f-9d3b-4372-a6e2-666b7be64b58" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/ITClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/ITPackage.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/ITPackageCollection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassEnum$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassOptionsEnum$OptionsClassArticle.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassOptionsEnum$OptionsClassBook.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassOptionsEnum$OptionsClassGeneric.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassOptionsEnum$OptionsClassReport.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassOptionsEnum$OptionsValuesClass.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXClassOptionsEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXDocument$1.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXDocument.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXPackageCollection.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXPackageCollectionImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXPackageEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXPackageImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXPackageOptionsEnum$OptionsPackageBabel.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXPackageOptionsEnum$OptionsPackageGeneric.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/TeXPackageOptionsEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/io/TeXFileNotFoundException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/io/TeXIOException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/io/TeXInvalidFileException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/io/TeXWriter.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/items/ITItem.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/items/TeXItemEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/items/TeXItemEvent.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/items/TeXItemEventListener.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/items/env/TeXEnvEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/items/env/TeXEnvironmentImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/util/GenericConstEnum.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/util/TeXCharacters.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/util/TeXCommands.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/util/TeXConstants.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/org/usajusaj/jtex/util/Tools.class" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/SpecialIterator.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Translator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" afterPath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/doccreator/SpecialDocFactory.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/doccreator/SpecialDocFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
     </list>
     <ignored path="Jtex.iws" />
@@ -41,10 +79,23 @@
       <file leaf-file-name="Mdpp.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8011869">
-              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.7344214">
+              <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Translator.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Translator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#553#554#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -117,7 +168,6 @@
         <option value="$PROJECT_DIR$/src/main/java/org/usajusaj/jtex/TeXDocument.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/doccreator/DocFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Syntax.java" />
         <option value="/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/plugin.jar!/sun/plugin/util/PluginSysUtil.class" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/OutputDocument.java" />
@@ -125,7 +175,9 @@
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/doccreator/SpecialDocument.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/doccreator/SpecialDocFactory.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Runner.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/SpecialIterator.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Translator.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
       </list>
     </option>
@@ -775,7 +827,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451167277981</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Need to redo AST">
+      <created>1451169786017</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1451169786017</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -861,7 +919,8 @@
     <MESSAGE value="Almost there" />
     <MESSAGE value="Now needs a scanner for Abstract Syntax Tree" />
     <MESSAGE value="Remove the helper Tex Classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove the helper Tex Classes" />
+    <MESSAGE value="Need to redo AST" />
+    <option name="LAST_COMMIT_MESSAGE" value="Need to redo AST" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1156,16 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0">
-          <caret line="63" column="0" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/jre/lib/plugin.jar!/sun/plugin/util/PluginSysUtil.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.35491607">
@@ -1235,24 +1284,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/SpecialIterator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33382788">
-          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.35756677">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#1701#1702#0" expanded="true" />
+            <element signature="e#1730#1731#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Translator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
-            <element signature="e#280#281#0" expanded="true" />
-            <element signature="e#305#306#0" expanded="true" />
-            <element signature="e#338#339#0" expanded="true" />
+            <element signature="e#553#554#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8011869">
-          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7344214">
+          <caret line="79" column="30" selection-start-line="79" selection-start-column="30" selection-end-line="79" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
