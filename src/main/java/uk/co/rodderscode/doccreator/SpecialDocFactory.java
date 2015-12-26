@@ -3,12 +3,18 @@ package uk.co.rodderscode.doccreator;
 
 public class SpecialDocFactory {
 
-    public static SpecialDocument getDocInstance(TargetType type){
-        if (type.equals(TargetType.HTML)) {
-            return new HtmlCreator();
-        }else {
-            return null;
+    public static SpecialDocument getInstance(TargetType type) {
+        SpecialDocument d = null;
+        switch (type){
+            case HTML:
+                d = new HtmlCreator();
+                break;
+            case RTF:
+                break;
+            case TXT:
+                break;
         }
+        return d;
     }
 
 }

@@ -1,10 +1,9 @@
 package uk.co.rodderscode.mdpp;
 
 
-import uk.co.rodderscode.doccreator.SpecialDocFactory;
-import uk.co.rodderscode.doccreator.SpecialDocument;
-import uk.co.rodderscode.doccreator.TargetType;
+import uk.co.rodderscode.doccreator.*;
 import uk.co.rodderscode.mdpp.exceptions.NotValidMdppFile;
+import uk.co.rodderscode.utils.Printer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -46,11 +45,11 @@ public class Mdpp {
         loadInputFile();
 
         Scanner scanner = new Scanner(inputFile);
+        Lexer lexer = new Lexer();
 
         int line = 0;
         while(scanner.hasNext()){
             String next = scanner.nextLine();
-            Lexer lexer = new Lexer();
             lexer.tokenize(next);
             HashMap hm = new HashMap();
             hm.put(line++, lexer.getTokenized());
@@ -70,7 +69,7 @@ public class Mdpp {
 
     public void compile() {
 
-        SpecialDocument document = SpecialDocFactory.getDocInstance(TargetType.HTML);
+        SpecialDocument document = SpecialDocFactory.getInstance(TargetType.HTML);
         Iterator<HashMap<Integer, String>> iterator = AST.iterator();
 
         // Line by line
@@ -79,29 +78,11 @@ public class Mdpp {
             Collection values = hm.values();
 
             // Token by token
-            Iterator<Syntax> i2 = values.iterator();
-            while(i2.hasNext()) {
-                switch (i2.next()) {
-                    case TITLE:
-                        break;
-                    case INTEGER:
-                        break;
-                    case LIST:
-                        break;
-                    case PUNCTUATION:
-                        break;
-                    case DASH:
-                    case WEIRD_SHIT:
-                        break;
-                    case WHITESPACE:
-                    case CHARACTER:
-                        break;
+//            SpecialIterator runner = new SpecialIterator(values);
 
-                }
-            }
         }
 
-//        Printer.pl(document.getOutput());
+        Printer.pl(document.getFinal());
     }
 
 }
