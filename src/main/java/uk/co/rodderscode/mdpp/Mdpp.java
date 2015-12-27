@@ -16,6 +16,8 @@ public class Mdpp {
     private File inputFile = null;
     private SpecialDocument document;
 
+    // Abstract Syntax Tree. Not a tree in this case as its much easier to just iterate on a flat array
+    // and there is no syntax checking at the moment either
     private List<Line> AST = new ArrayList<>();
 
     public Mdpp(String filename) throws NotValidMdppFile {
@@ -43,9 +45,8 @@ public class Mdpp {
         inputFile = new File(filename);
     }
 
-
     /**
-     * Lexical and Syntax Frontend Analysis
+     * Lexical and Syntax Frontend Production
      * @throws FileNotFoundException
      */
     public void parse() throws FileNotFoundException {
@@ -76,17 +77,20 @@ public class Mdpp {
         while(iterator.hasNext()){
             // Get a tokenized line
             Line line = iterator.next();
-            synthesize(line);
+
+            // build the document now.
+            if (line.getType().equals(Syntax.TITLE)){
+                //TODO: Need to get the "look for similar" function working so that we get the levels for a title here.
+                document.title(line.getOrigContent(), 1);
+            } else {
+                document.text(line.getOrigContent());
+            }
         }
 
         Printer.pl(document.getFinal());
     }
 
-    private void synthesize(Line line) {
 
-        Printer.pl(line.getLineNumber()+" "+line.getTokens().toString());
-
-    }
 
 
 }

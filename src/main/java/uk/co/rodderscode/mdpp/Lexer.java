@@ -19,7 +19,7 @@ public class Lexer {
             convertToToken(c);
         }
 
-        Syntax type = (tokens.size() > 0) ? tokens.get(0).getToken() : Syntax.WHITESPACE;
+        Syntax type = (tokens.size() > 0) ? tokens.get(0).getToken() : Syntax.NULL;
 
         Line line = new Line(type, lineNum, str, tokens);
         return line;
