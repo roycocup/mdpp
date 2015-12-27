@@ -49,7 +49,6 @@ public class HtmlCreator implements SpecialDocument {
         document.append(s);
     }
 
-    @Override
     public String getFinal(){
         add("\n</body></html>");
         return document.toString();

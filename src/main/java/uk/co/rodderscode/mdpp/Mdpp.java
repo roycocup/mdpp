@@ -13,8 +13,9 @@ public class Mdpp {
 
     private String filename = null;
     private File inputFile = null;
-    public List<ArrayList<Syntax>> AST = new ArrayList<>();
     private SpecialDocument document;
+
+    private List<ArrayList<Token>> AST = new ArrayList<>();
 
     public Mdpp(String filename) throws NotValidMdppFile {
         setFilename(filename);
@@ -24,6 +25,7 @@ public class Mdpp {
 
 
     public void setFilename(String filename) {this.filename = filename;}
+
     public String getFilename() {return this.filename;}
 
     /**
@@ -55,11 +57,10 @@ public class Mdpp {
         while(scanner.hasNext()){
             String next = scanner.nextLine();
             lexer.tokenize(next);
-            //TODO: AST needs to have the characters and some annotations for the backend
             AST.add(lexer.getTokenized());
         }
-//        Printer.pl(AST);
 
+//        Printer.pl(AST);
     }
 
 
@@ -72,29 +73,54 @@ public class Mdpp {
      * Backend Synthesize
      */
     public void compile() {
-
-        SpecialDocument document = SpecialDocFactory.getInstance(TargetType.HTML);
-        Iterator<ArrayList<Syntax>> iterator = AST.iterator();
-
+        document = SpecialDocFactory.getInstance(TargetType.HTML);
+        Iterator<ArrayList<Token>> iterator = AST.iterator();
         // Line by line
+        int lineNum = 0;  // line counter
         while(iterator.hasNext()){
-            ArrayList<Syntax> line = iterator.next();
-
-            // Token by token
-            List<Syntax> constants = Syntax.getAll(); // all the constants from Syntax enum
-            for (Syntax node : line){
-                if(constants.contains(node)) {
-                    // Dynamically call the enum constant and send it to a react method
-                    react(Syntax.valueOf(node.toString()));
-                }
-            }
+            // Get a tokenized line
+            ArrayList<Token> line = iterator.next();
+            synthesize(line, lineNum);
+            lineNum++;
         }
 
 //        Printer.pl(document.getFinal());
     }
 
-    private void react(Syntax syntax) {
+    private String synthesize(ArrayList<Token> line, int lineNumber) {
+        StringBuilder finalOutput       = new StringBuilder();
+        TokenIterator tokenIterator     = new TokenIterator(line);
 
+        // token by token in a line
+        while(tokenIterator.hasNext()){
+            Token token = tokenIterator.getNextToken();
+
+            switch (token.getToken()){
+                case TITLE:
+//                    int similar = tokenIterator.getNextIfSimilar(Syntax.TITLE, tokenIterator.getPosition());
+//                    Printer.pl(similar);
+                    break;
+                case LIST:
+                    break;
+                case INTEGER:
+                    break;
+                case PUNCTUATION:
+                    break;
+                case DASH:
+                    break;
+                case WEIRD_SHIT:
+                    break;
+                default:
+                case WHITESPACE:
+                case CHARACTER:
+                    finalOutput.append(token.getValue());
+                    break;
+            }
+
+        }
+
+        return finalOutput.toString();
     }
+
 
 }

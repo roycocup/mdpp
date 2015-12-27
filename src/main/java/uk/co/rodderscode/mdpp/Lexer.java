@@ -3,10 +3,11 @@ package uk.co.rodderscode.mdpp;
 import uk.co.rodderscode.utils.Printer;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public class Lexer {
 
-    ArrayList<Syntax> tokens = new ArrayList<>();
+    ArrayList<Token> tokens = new ArrayList<>();
 
     public Lexer() {}
 
@@ -23,31 +24,31 @@ public class Lexer {
     private void convertToToken(Character c) {
         switch (c){
             case ' ':
-                tokens.add(Syntax.WHITESPACE);
+                tokens.add(new Token(c, Syntax.WHITESPACE));
                 break;
             case '#':
-                tokens.add(Syntax.TITLE);
+                tokens.add(new Token(c, Syntax.TITLE));
                 break;
             case '*':
-                tokens.add(Syntax.LIST);
+                tokens.add(new Token(c, Syntax.LIST));
                 break;
             default:
                 if (Character.isDigit(c) == true){
-                    tokens.add(Syntax.INTEGER);
+                    tokens.add(new Token(c, Syntax.INTEGER));
                 } else if (Character.isLetter(c)){
-                    tokens.add(Syntax.CHARACTER);
+                    tokens.add(new Token(c, Syntax.CHARACTER));
                     break;
                 } else {
                     int type = Character.getType(c);
                     if (type == Character.END_PUNCTUATION) {
-                        tokens.add(Syntax.PUNCTUATION);
+                        tokens.add(new Token(c, Syntax.PUNCTUATION));
                         break;
                     } else if (type == Character.OTHER_PUNCTUATION){
-                        tokens.add(Syntax.PUNCTUATION);
+                        tokens.add(new Token(c, Syntax.PUNCTUATION));
                         break;
                     }else{
                         Printer.log("found type: "+type+" when tokenizing string");
-                        tokens.add(Syntax.WEIRD_SHIT);
+                        tokens.add(new Token(c, Syntax.WEIRD_SHIT));
                         break;
                     }
                 }
@@ -56,7 +57,7 @@ public class Lexer {
     }
 
 
-    ArrayList<Syntax> getTokenized(){
+    ArrayList<Token> getTokenized(){
         return tokens;
     }
 
