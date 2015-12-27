@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3bbee6f-9d3b-4372-a6e2-666b7be64b58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/exceptions/Line.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Translator.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" afterPath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
     </list>
     <ignored path="Jtex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,8 +55,8 @@
       <file leaf-file-name="Lexer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51038575">
-              <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
+            <state vertical-scroll-proportion="0.421365">
+              <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -887,7 +883,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451186299704</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="With a better AST we can go into production">
+      <created>1451242825018</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1451242825018</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -977,7 +979,8 @@
     <MESSAGE value="I think this is a better solution instead of a Map... no need for complexity" />
     <MESSAGE value="Starting reactor" />
     <MESSAGE value="Will have to refactor a bit now - saving" />
-    <option name="LAST_COMMIT_MESSAGE" value="Will have to refactor a bit now - saving" />
+    <MESSAGE value="With a better AST we can go into production" />
+    <option name="LAST_COMMIT_MESSAGE" value="With a better AST we can go into production" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1448,8 +1451,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51038575">
-          <caret line="40" column="61" selection-start-line="40" selection-start-column="61" selection-end-line="40" selection-end-column="61" />
+        <state vertical-scroll-proportion="0.421365">
+          <caret line="36" column="54" selection-start-line="36" selection-start-column="54" selection-end-line="36" selection-end-column="54" />
           <folding />
         </state>
       </provider>
