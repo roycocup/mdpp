@@ -14,13 +14,14 @@ public enum Syntax{
     DASH,
     WEIRD_SHIT;
 
-    Syntax(){}
+    Syntax() {}
 
     static List<Syntax> getAll(){
         List<Syntax> l = new ArrayList<>();
         for(Syntax v : Syntax.values())
             l.add(v);
-
         return l;
     }
+
+
 }

@@ -77,20 +77,39 @@ public class Mdpp {
         while(iterator.hasNext()){
             // Get a tokenized line
             Line line = iterator.next();
-
-            // build the document now.
-            if (line.getType().equals(Syntax.TITLE)){
-                //TODO: Need to get the "look for similar" function working so that we get the levels for a title here.
-                document.title(line.getOrigContent(), 1);
-            } else {
-                document.text(line.getOrigContent());
-            }
+            read(line);
         }
 
         Printer.pl(document.getFinal());
     }
 
 
+    private void read(Line line){
+        // build the document now.
+        if (line.getType().equals(Syntax.TITLE)){
+            //TODO: Need to get the "look for similar" function working so that we get the levels for a title here.
+            // 1. Need to iterate the characters,
+            // 2. remove the titles in the beginning
+            // 3. return as string to add to html title
+            StringBuilder s = new StringBuilder();
+            int counter = 0;
+            for (Token token : line.getTokens()){
+                //TODO: this will remove title symbols from the middle of the text too. Must fix.
+                if (token.getToken().equals(Syntax.TITLE)) {
+                    counter++;
+                    continue;
+                }
+                s.append(token.getValue());
+            }
+            document.title(s.toString(), counter);
+            return;
+        }
+
+        for (Token token : line.getTokens()) {
+            document.text(token.getValue().toString());
+        }
+
+    }
 
 
 }
