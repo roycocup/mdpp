@@ -1,24 +1,28 @@
 package uk.co.rodderscode.mdpp;
 
+import uk.co.rodderscode.mdpp.exceptions.Line;
 import uk.co.rodderscode.utils.Printer;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class Lexer {
 
     ArrayList<Token> tokens = new ArrayList<>();
 
+
     public Lexer() {}
 
-
-    public void tokenize(String str) {
+    public Line tokenize(String str, int lineNum) {
         MdppScanner scanner = new MdppScanner(str);
-        while (scanner.hasNext() == true) {
+        while (scanner.hasNext()) {
             char c = scanner.readNext();
             convertToToken(c);
         }
 
+        Syntax type = (tokens.size() > 0) ? tokens.get(0).getToken() : Syntax.WHITESPACE;
+
+        Line line = new Line(type, lineNum, str, tokens);
+        return line;
     }
 
     private void convertToToken(Character c) {
@@ -54,11 +58,8 @@ public class Lexer {
                 }
                 break;
         }
+
     }
 
-
-    ArrayList<Token> getTokenized(){
-        return tokens;
-    }
 
 }

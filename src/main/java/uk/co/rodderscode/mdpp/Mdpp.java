@@ -2,6 +2,7 @@ package uk.co.rodderscode.mdpp;
 
 
 import uk.co.rodderscode.doccreator.*;
+import uk.co.rodderscode.mdpp.exceptions.Line;
 import uk.co.rodderscode.mdpp.exceptions.NotValidMdppFile;
 import uk.co.rodderscode.utils.Printer;
 
@@ -15,7 +16,7 @@ public class Mdpp {
     private File inputFile = null;
     private SpecialDocument document;
 
-    private List<ArrayList<Token>> AST = new ArrayList<>();
+    private List<Line> AST = new ArrayList<>();
 
     public Mdpp(String filename) throws NotValidMdppFile {
         setFilename(filename);
@@ -51,13 +52,12 @@ public class Mdpp {
         loadInputFile();
 
         Scanner scanner = new Scanner(inputFile);
-        Lexer lexer = new Lexer();
 
-        int line = 0;
+        int lineNum = 0;
         while(scanner.hasNext()){
             String next = scanner.nextLine();
-            lexer.tokenize(next);
-            AST.add(lexer.getTokenized());
+            Lexer lexer = new Lexer();
+            AST.add(lexer.tokenize(next, lineNum++));
         }
 
 //        Printer.pl(AST);
@@ -69,77 +69,22 @@ public class Mdpp {
         compile();
     }
 
-    /**
-     * Backend Synthesize
-     */
     public void compile() {
         document = SpecialDocFactory.getInstance(TargetType.HTML);
-        Iterator<ArrayList<Token>> iterator = AST.iterator();
+        Iterator<Line> iterator = AST.iterator();
         // Line by line
-        int lineNum = 0;  // line counter
         while(iterator.hasNext()){
             // Get a tokenized line
-            ArrayList<Token> line = iterator.next();
-            synthesize(line, lineNum);
-            lineNum++;
+            Line line = iterator.next();
+            synthesize(line);
         }
 
         Printer.pl(document.getFinal());
     }
 
-    /**
-     * Create intermediate code (html partials) for the final output
-     * @param line
-     * @param lineNumber
-     * @return
-     */
-    private void synthesize(ArrayList<Token> line, int lineNumber) {
-        StringBuilder finalOutput       = new StringBuilder();
-        TokenIterator tokenIterator     = new TokenIterator(line);
-        TokenFlags flag = null;
-        // token by token
-        while(tokenIterator.hasNext()){
-            Token token = tokenIterator.getNextToken();
+    private void synthesize(Line line) {
 
-            switch (token.getToken()){
-                case TITLE:
-                    // if this is the beginning of the line
-                    if (tokenIterator.getPosition() == 0)
-                        flag = TokenFlags.TITLE;
-                        // check how many more of the same symbol do we have
-                    // if not, its a character, just append to the output
-//                    int similar = tokenIterator.getNextIfSimilar(Syntax.TITLE, tokenIterator.getPosition());
-//                    Printer.pl(similar);
-                    break;
-                case LIST:
-                    break;
-                case INTEGER:
-                    break;
-                case PUNCTUATION:
-                    break;
-                case DASH:
-                    break;
-                case WEIRD_SHIT:
-                    break;
-                default:
-                case WHITESPACE:
-                case CHARACTER:
-                    finalOutput.append(token.getValue());
-                    break;
-            }
-
-        }
-        if ( flag != null ){
-            if (flag.equals(TokenFlags.TITLE))
-                document.title(finalOutput.toString(), 1);
-
-            if (flag.equals(TokenFlags.LIST)) {
-                String[] s = {finalOutput.toString()};
-                document.list(s);
-            }
-        }
-
-
+        Printer.pl(line.getLineNumber()+" "+line.getTokens().toString());
 
     }
 
