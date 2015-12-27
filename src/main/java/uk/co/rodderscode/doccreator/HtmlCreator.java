@@ -14,9 +14,7 @@ public class HtmlCreator implements SpecialDocument {
         String header = "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
-                "<meta charset=\"utf-8\" />\n" +
-                "<title>HTML5 Doctor | Element Index</title>\n" +
-                "<link rel=\"stylesheet\" href=\"style.css\" />\n\n";
+                "<meta charset=\"utf-8\" />\n";
 
         add(header);
 

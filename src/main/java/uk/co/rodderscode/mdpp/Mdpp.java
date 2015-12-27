@@ -84,19 +84,30 @@ public class Mdpp {
             lineNum++;
         }
 
-//        Printer.pl(document.getFinal());
+        Printer.pl(document.getFinal());
     }
 
-    private String synthesize(ArrayList<Token> line, int lineNumber) {
+    /**
+     * Create intermediate code (html partials) for the final output
+     * @param line
+     * @param lineNumber
+     * @return
+     */
+    private void synthesize(ArrayList<Token> line, int lineNumber) {
         StringBuilder finalOutput       = new StringBuilder();
         TokenIterator tokenIterator     = new TokenIterator(line);
-
-        // token by token in a line
+        TokenFlags flag = null;
+        // token by token
         while(tokenIterator.hasNext()){
             Token token = tokenIterator.getNextToken();
 
             switch (token.getToken()){
                 case TITLE:
+                    // if this is the beginning of the line
+                    if (tokenIterator.getPosition() == 0)
+                        flag = TokenFlags.TITLE;
+                        // check how many more of the same symbol do we have
+                    // if not, its a character, just append to the output
 //                    int similar = tokenIterator.getNextIfSimilar(Syntax.TITLE, tokenIterator.getPosition());
 //                    Printer.pl(similar);
                     break;
@@ -118,8 +129,18 @@ public class Mdpp {
             }
 
         }
+        if ( flag != null ){
+            if (flag.equals(TokenFlags.TITLE))
+                document.title(finalOutput.toString(), 1);
 
-        return finalOutput.toString();
+            if (flag.equals(TokenFlags.LIST)) {
+                String[] s = {finalOutput.toString()};
+                document.list(s);
+            }
+        }
+
+
+
     }
 
 
