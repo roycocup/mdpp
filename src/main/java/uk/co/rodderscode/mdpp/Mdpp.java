@@ -41,6 +41,10 @@ public class Mdpp {
     }
 
 
+    /**
+     * Lexical and Syntax Frontend Analysis
+     * @throws FileNotFoundException
+     */
     public void parse() throws FileNotFoundException {
         loadInputFile();
 
@@ -51,9 +55,9 @@ public class Mdpp {
         while(scanner.hasNext()){
             String next = scanner.nextLine();
             lexer.tokenize(next);
+            //TODO: AST needs to have the characters and some annotations for the backend
             AST.add(lexer.getTokenized());
         }
-
 //        Printer.pl(AST);
 
     }
@@ -64,6 +68,9 @@ public class Mdpp {
         compile();
     }
 
+    /**
+     * Backend Synthesize
+     */
     public void compile() {
 
         SpecialDocument document = SpecialDocFactory.getInstance(TargetType.HTML);
@@ -87,7 +94,7 @@ public class Mdpp {
     }
 
     private void react(Syntax syntax) {
-        Printer.pl(syntax);
+
     }
 
 }
