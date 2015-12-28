@@ -4,6 +4,7 @@ import java.io.File;
 import uk.co.rodderscode.doccreator.TargetType;
 import uk.co.rodderscode.mdpp.Mdpp;
 
+
 public class Main {
 
     private String inputFilename;

@@ -1,6 +1,6 @@
 package uk.co.rodderscode.mdpp;
 
-import uk.co.rodderscode.mdpp.exceptions.Line;
+import uk.co.rodderscode.mdpp.Line;
 import uk.co.rodderscode.utils.Printer;
 
 import java.util.ArrayList;
@@ -8,12 +8,12 @@ import java.util.ArrayList;
 public class Lexer {
 
     ArrayList<Token> tokens = new ArrayList<>();
-
+    MdppScanner scanner;
 
     public Lexer() {}
 
     public Line tokenize(String str, int lineNum) {
-        MdppScanner scanner = new MdppScanner(str);
+        scanner = new MdppScanner(str);
         while (scanner.hasNext()) {
             char c = scanner.readNext();
             convertToToken(c);

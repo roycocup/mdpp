@@ -7,7 +7,7 @@
                    
      Matej Usaj                                                                
      ====================================================================== -->
-<project name="jTeX" default="dist" basedir=".">
+<project name="MarkdownPlusPlus" default="dist" basedir=".">
     <property file="build.properties"/>
     <property file="project.properties"/>
     <taskdef resource="${proguard.task.properties}"
@@ -18,7 +18,7 @@
     </tstamp>
     
     <description>
-            jTeX LaTeX library
+        MarkdownPlusPlus library
     </description>
 
     <target name="init">

@@ -2,7 +2,7 @@ package uk.co.rodderscode.mdpp;
 
 
 import uk.co.rodderscode.doccreator.*;
-import uk.co.rodderscode.mdpp.exceptions.Line;
+import uk.co.rodderscode.mdpp.Line;
 import uk.co.rodderscode.mdpp.exceptions.NotValidMdppFile;
 import uk.co.rodderscode.utils.Printer;
 

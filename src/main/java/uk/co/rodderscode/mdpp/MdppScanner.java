@@ -6,8 +6,6 @@ public class MdppScanner{
     char[] chars;
     int position = 0;
 
-    public MdppScanner() {}
-
     public MdppScanner(String source) {
         setString(source);
     }

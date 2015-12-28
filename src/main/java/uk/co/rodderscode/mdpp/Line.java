@@ -1,8 +1,5 @@
-package uk.co.rodderscode.mdpp.exceptions;
+package uk.co.rodderscode.mdpp;
 
-
-import uk.co.rodderscode.mdpp.Syntax;
-import uk.co.rodderscode.mdpp.Token;
 
 import java.util.ArrayList;
 
@@ -33,9 +30,7 @@ public class Line {
         return origContent;
     }
 
-    public ArrayList<Token> getTokens() {
-        return tokens;
-    }
+    public ArrayList<Token> getTokens() {return tokens;}
 
 
 }
