@@ -50,7 +50,7 @@ public class Lexer {
                     } else if (type == Character.OTHER_PUNCTUATION){
                         tokens.add(new Token(c, Syntax.PUNCTUATION));
                         break;
-                    }else{
+                    } else {
                         Printer.log("found type: "+type+" when tokenizing string");
                         tokens.add(new Token(c, Syntax.WEIRD_SHIT));
                         break;

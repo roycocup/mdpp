@@ -15,9 +15,9 @@ public class MdppScanner{
     }
 
     boolean hasNext(){
-        if (position >= getSize()-1)
-            return false;
-        return true;
+        if ( position <= (getSize()-1) )
+            return true;
+        return false;
     }
 
     char readNext(){

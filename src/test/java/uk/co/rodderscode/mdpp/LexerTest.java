@@ -19,9 +19,8 @@ public class LexerTest {
 
     @Test
     public void testTokenize() throws Exception {
-        String str = "this should be good";
+        String str = "this is it";
         Line line = lexer.tokenize(str, 0);
-
-        assertEquals("There should be 19 tokens in this object", 19 ,line.getTokens().size());
+        assertEquals(str.length() ,line.getTokens().size());
     }
 }
