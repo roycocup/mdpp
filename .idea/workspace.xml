@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3bbee6f-9d3b-4372-a6e2-666b7be64b58" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/proguard.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/samples/org/usajusaj/jtex/samples/DocumentTest.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/MdppScannerTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/LexerTest.java" afterPath="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/LexerTest.java" />
     </list>
     <ignored path="Jtex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,22 +71,23 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
               <folding>
-                <element signature="e#393#394#0" expanded="true" />
-                <element signature="e#431#432#0" expanded="true" />
+                <element signature="e#456#457#0" expanded="true" />
+                <element signature="e#494#495#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LexerTest.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/LexerTest.java">
+      <file leaf-file-name="MdppScannerTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/MdppScannerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84586465">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state vertical-scroll-proportion="0.81958765">
+              <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#420#421#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -125,7 +123,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/MdPlusPlusTest.groovy" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/MdPlusPlusTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdPlusPlus.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Parser.java" />
@@ -174,8 +171,9 @@
         <option value="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/TokenTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java" />
         <option value="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/LexerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java" />
+        <option value="$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/MdppScannerTest.java" />
       </list>
     </option>
   </component>
@@ -898,34 +896,34 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 15h 56m 50s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 30m 02s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 15h 57m 25s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 31m 00s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 15h 58m 09s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 31m 52s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 15h 59m 12s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 33m 20s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 00m 17s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 34m 46s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 02m 20s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 35m 44s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 05m 07s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 36m 11s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 08m 39s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 36m 45s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 08m 55s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 38m 24s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 09m 27s.xml">
+    <history-entry file="All_in_MarkdownPlusPlus - 2015.12.29 at 16h 39m 12s.xml">
       <configuration name="All in MarkdownPlusPlus" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -935,12 +933,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763532" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3262295" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32763532" sideWeight="0.5025707" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969153" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.4974293" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5180328" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5180328" sideWeight="0.4974293" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32905984" sideWeight="0.4974293" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19386107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1372,6 +1370,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.51186943">
           <caret line="27" column="55" selection-start-line="27" selection-start-column="55" selection-end-line="27" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1435,23 +1434,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/LexerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.5927835">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding>
-            <element signature="e#393#394#0" expanded="true" />
-            <element signature="e#431#432#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/LexerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/MdppScanner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84586465">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#456#457#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/uk/co/rodderscode/mdpp/MdppScannerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81958765">
+          <caret line="66" column="4" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
+          <folding>
+            <element signature="e#420#421#0" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
           </folding>
         </state>
       </provider>

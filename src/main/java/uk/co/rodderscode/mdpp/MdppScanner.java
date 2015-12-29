@@ -14,6 +14,8 @@ public class MdppScanner{
         chars = source.toCharArray();
     }
 
+    public String getString() {return String.valueOf(chars);}
+
     boolean hasNext(){
         if ( position <= (getSize()-1) )
             return true;
@@ -25,7 +27,7 @@ public class MdppScanner{
     }
 
     char readPrev(){
-        return get(position--);
+        return get(--position);
     }
 
 
