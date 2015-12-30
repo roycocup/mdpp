@@ -4,16 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public enum Syntax{
-    NULL,
-    WHITESPACE,
-    CHARACTER,
-    TITLE,
-    LINK,
-    LIST,
-    INTEGER,
-    PUNCTUATION,
-    DASH,
-    WEIRD_SHIT;
+    EM,
+    STRONG,
+    STRONGEM,
+    STRIKETHROUGH,
+    HEADER,
+    MULTILINEHEADER,
+    URL,
+    HREF,
+    PARAGRAPH,
+    NEWLINE,
+    BULLETSTART,
+    MARKDOWNCODESPAN,
+    UNKNOWN,
+    NULL;
 
     Syntax() {}
 

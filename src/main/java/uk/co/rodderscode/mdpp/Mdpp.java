@@ -12,24 +12,19 @@ import java.util.*;
 
 public class Mdpp {
 
-    private String filename = null;
-    private File inputFile = null;
-    private SpecialDocument document;
+    private String filename     = null;
+    private File inputFile      = null;
+    private List<Line> AST      = new ArrayList<>();
+    private SpecialDocument document; // The final output document
 
-    // Abstract Syntax Tree. Not a tree in this case as its much easier to just iterate on a flat array
-    // and there is no syntax checking at the moment either
-    private List<Line> AST = new ArrayList<>();
+
 
     public Mdpp(String filename) throws NotValidMdppFile {
-        setFilename(filename);
+        this.filename = filename;
         if( !isMarkdown() )
             throw new NotValidMdppFile("File is not valid markdown file (.md)");
+        inputFile = new File(filename);
     }
-
-
-    public void setFilename(String filename) {this.filename = filename;}
-
-    public String getFilename() {return this.filename;}
 
     /**
      * Checks if the file has a valid .md extension
@@ -41,18 +36,13 @@ public class Mdpp {
         return extension.equals("md");
     }
 
-    private void loadInputFile() {
-        inputFile = new File(filename);
-    }
-
     /**
      * Lexical and Syntax Frontend Production
      * @throws FileNotFoundException
      */
     public void parse() throws FileNotFoundException {
-        loadInputFile();
-
         Scanner scanner = new Scanner(inputFile);
+
 
         int lineNum = 0;
         while(scanner.hasNext()){
@@ -65,64 +55,9 @@ public class Mdpp {
     }
 
 
-    public void compileTo(TargetType type){
-        //TODO: support other types
-        compile();
-    }
+    public void compile() {}
 
-    public void compile() {
-        // Instantiate the final document
-        document = SpecialDocFactory.getInstance(TargetType.HTML);
-        Iterator<Line> iterator = AST.iterator();
-        // Line by line
-        while(iterator.hasNext()){
-            // Get a tokenized line
-            Line line = iterator.next();
-            read(line);
-        }
-
-        Printer.pl(document.getFinal());
-    }
-
-
-    private void read(Line line){
-        // BUILD THE DOCUMENT
-
-        switch (line.getType()) {
-            case TITLE:
-                //TODO: Need to get the "look for similar" function working so that we get the levels for a title here.
-                // 1. Need to iterate the characters,
-                // 2. remove the titles in the beginning
-                // 3. return as string to add to html title
-                StringBuilder s = new StringBuilder();
-                int counter = 0;
-                for (Token token : line.getTokens()){
-                    //TODO: this will remove title symbols from the middle of the text too. Must fix.
-                    if (token.getToken().equals(Syntax.TITLE)) {
-                        counter++;
-                        continue;
-                    }
-                    s.append(token.getValue());
-                }
-                document.title(s.toString(), counter);
-                break;
-
-            case LIST:
-                break;
-
-            case LINK:
-                break;
-
-            default:
-                // Everything else is text
-                for (Token token : line.getTokens()) {
-                    document.text(token.getValue().toString());
-                }
-                break;
-
-        }
-
-    }
+    private void read(Line line){}
 
 
 }

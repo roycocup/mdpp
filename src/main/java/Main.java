@@ -18,7 +18,7 @@ public class Main {
         try {
             Mdpp mdpp = new Mdpp(inputFilename);
             mdpp.parse();
-            mdpp.compileTo(TargetType.HTML);
+            mdpp.compile();
         }catch (Exception e){
             e.printStackTrace();
             System.exit(0);
