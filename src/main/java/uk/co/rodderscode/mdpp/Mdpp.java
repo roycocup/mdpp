@@ -1,39 +1,23 @@
 package uk.co.rodderscode.mdpp;
 
-
 import uk.co.rodderscode.doccreator.*;
-import uk.co.rodderscode.mdpp.Line;
-import uk.co.rodderscode.mdpp.exceptions.NotValidMdppFile;
-import uk.co.rodderscode.utils.Printer;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
+import java.util.regex.Pattern;
 
 public class Mdpp {
-
-    private String filename     = null;
     private File inputFile      = null;
-    private List<Line> AST      = new ArrayList<>();
+    private List<Node> AST      = new ArrayList<>();
     private SpecialDocument document; // The final output document
 
 
-
-    public Mdpp(String filename) throws NotValidMdppFile {
-        this.filename = filename;
-        if( !isMarkdown() )
-            throw new NotValidMdppFile("File is not valid markdown file (.md)");
-        inputFile = new File(filename);
-    }
-
     /**
-     * Checks if the file has a valid .md extension
-     * @return boolean
+     * Constructor
+     * @param file
      */
-    private Boolean isMarkdown() {
-        int dotIndex = filename.lastIndexOf(".")+1; //otherwise the dot will be included
-        String extension = filename.substring(dotIndex);
-        return extension.equals("md");
+    public Mdpp(File file) {
+        inputFile = file;
     }
 
     /**
@@ -42,13 +26,12 @@ public class Mdpp {
      */
     public void parse() throws FileNotFoundException {
         Scanner scanner = new Scanner(inputFile);
-
-
+        scanner.useDelimiter(Pattern.compile("\\n"));
+        Lexer lexer = new Lexer();
         int lineNum = 0;
         while(scanner.hasNext()){
-            String next = scanner.nextLine();
-            Lexer lexer = new Lexer();
-            AST.add(lexer.tokenize(next, lineNum++));
+            String paragraph = scanner.next();
+            AST.add(lexer.tokenize(paragraph, lineNum++));
         }
 
 //        Printer.pl(AST);
@@ -57,7 +40,7 @@ public class Mdpp {
 
     public void compile() {}
 
-    private void read(Line line){}
+    private void read(Node line){}
 
 
 }

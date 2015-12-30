@@ -1,7 +1,6 @@
 import java.io.File;
 
 
-import uk.co.rodderscode.doccreator.TargetType;
 import uk.co.rodderscode.mdpp.Mdpp;
 
 
@@ -15,8 +14,13 @@ public class Main {
         inputFilename = args[0];
         outputFilename = args[1];
 
+
+
         try {
-            Mdpp mdpp = new Mdpp(inputFilename);
+            if( !isMarkdown(inputFilename) )
+                throw new Exception("File is not valid markdown file (.md)");
+
+            Mdpp mdpp = new Mdpp(new File (inputFilename));
             mdpp.parse();
             mdpp.compile();
         }catch (Exception e){
@@ -39,6 +43,16 @@ public class Main {
             System.err.println("Usage: Java targetFile.md outputFile.txt");
             System.exit(0);
         }
+    }
+
+    /**
+     * Checks if the file has a valid .md extension
+     * @return boolean
+     */
+    private Boolean isMarkdown(String filename) {
+        int dotIndex = filename.lastIndexOf(".")+1; //otherwise the dot will be included
+        String extension = filename.substring(dotIndex);
+        return extension.equals("md");
     }
 
 
