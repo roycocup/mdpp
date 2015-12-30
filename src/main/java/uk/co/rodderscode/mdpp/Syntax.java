@@ -8,6 +8,7 @@ public enum Syntax{
     WHITESPACE,
     CHARACTER,
     TITLE,
+    LINK,
     LIST,
     INTEGER,
     PUNCTUATION,

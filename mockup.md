@@ -11,3 +11,10 @@ This is another bit of text
 2. enumeration
 3. for the layman... :) 
 
+
+This is an inline link [an example](http://example.com/ "Title"). The title attribute is optional 
+
+This is [an example][id] of a reference-style link.
+
+[id]: http://rodderscode.co.uk "And a title here"
+

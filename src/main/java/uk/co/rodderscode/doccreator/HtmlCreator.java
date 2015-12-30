@@ -48,7 +48,7 @@ public class HtmlCreator implements SpecialDocument {
     }
 
     public String getFinal(){
-        add("\n</body></html>");
+        add("\n</body>\n</html>");
         return document.toString();
     }
 

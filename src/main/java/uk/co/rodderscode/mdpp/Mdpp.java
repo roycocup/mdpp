@@ -71,6 +71,7 @@ public class Mdpp {
     }
 
     public void compile() {
+        // Instantiate the final document
         document = SpecialDocFactory.getInstance(TargetType.HTML);
         Iterator<Line> iterator = AST.iterator();
         // Line by line
@@ -85,28 +86,40 @@ public class Mdpp {
 
 
     private void read(Line line){
-        // build the document now.
-        if (line.getType().equals(Syntax.TITLE)){
-            //TODO: Need to get the "look for similar" function working so that we get the levels for a title here.
-            // 1. Need to iterate the characters,
-            // 2. remove the titles in the beginning
-            // 3. return as string to add to html title
-            StringBuilder s = new StringBuilder();
-            int counter = 0;
-            for (Token token : line.getTokens()){
-                //TODO: this will remove title symbols from the middle of the text too. Must fix.
-                if (token.getToken().equals(Syntax.TITLE)) {
-                    counter++;
-                    continue;
-                }
-                s.append(token.getValue());
-            }
-            document.title(s.toString(), counter);
-            return;
-        }
+        // BUILD THE DOCUMENT
 
-        for (Token token : line.getTokens()) {
-            document.text(token.getValue().toString());
+        switch (line.getType()) {
+            case TITLE:
+                //TODO: Need to get the "look for similar" function working so that we get the levels for a title here.
+                // 1. Need to iterate the characters,
+                // 2. remove the titles in the beginning
+                // 3. return as string to add to html title
+                StringBuilder s = new StringBuilder();
+                int counter = 0;
+                for (Token token : line.getTokens()){
+                    //TODO: this will remove title symbols from the middle of the text too. Must fix.
+                    if (token.getToken().equals(Syntax.TITLE)) {
+                        counter++;
+                        continue;
+                    }
+                    s.append(token.getValue());
+                }
+                document.title(s.toString(), counter);
+                break;
+
+            case LIST:
+                break;
+
+            case LINK:
+                break;
+
+            default:
+                // Everything else is text
+                for (Token token : line.getTokens()) {
+                    document.text(token.getValue().toString());
+                }
+                break;
+
         }
 
     }
