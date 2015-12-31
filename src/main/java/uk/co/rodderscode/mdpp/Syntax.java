@@ -5,19 +5,32 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public enum Syntax{
-    EM                  ("", Pattern.compile("")),
-    STRONG              ("", Pattern.compile("")),
-    STRONGEM            ("", Pattern.compile("")),
-    STRIKETHROUGH       ("", Pattern.compile("")),
-    HEADER              ("", Pattern.compile("#{1,6}[^\\s\\w]*")),
-    MULTILINEHEADER     ("", Pattern.compile("")),
-    URL                 ("code", Pattern.compile("")),
-    HREF                ("link", Pattern.compile("")),
-    PARAGRAPH           ("p", Pattern.compile("")),
-    NEWLINE             ("break", Pattern.compile("")),
-    BULLETSTART         ("ul", Pattern.compile("")),
-    MARKDOWNCODESPAN    ("span", Pattern.compile("")),
+//    EM                  ("", Pattern.compile("")),
+//    STRONG              ("", Pattern.compile("")),
+//    STRONGEM            ("", Pattern.compile("")),
+//    STRIKETHROUGH       ("", Pattern.compile("")),
+//    MULTILINEHEADER     ("", Pattern.compile("")),
+//    MARKDOWNCODESPAN    ("span", Pattern.compile("")),
+
+    HEADER              ("title", Pattern.compile("#*[\\s\\w]*")),
+
+    HREF                ("link", Pattern.compile(
+                        "\\[[\\w\\s]*]\\((\\b"+
+                        "(https?|ftp|file)://)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+"+
+                        "[-A-Za-z0-9+&@#/%=~_|]([\\s\\\"\\w]*)\\)")),
+
+    REFERENCE_LINK      ("ref_link", Pattern.compile("\\[[\\w\\s]*]\\[[a-z]*\\]")),
+
+    REFERENCE           ("reference", Pattern.compile("\\[[\\w\\s]*]:[\\s]+"+
+                        "(\\b(https?|ftp|file)://)?[-A-Za-z0-9+&@#/%?=~_|!:,.;]+"+
+                        "[-A-Za-z0-9+&@#/%=~_|][\\s]+")),
+
+    PARAGRAPH           ("p", Pattern.compile("\\n\\n")),
+    NEWLINE             ("break", Pattern.compile("\\n")),
+    OLIST               ("ol", Pattern.compile("(\\d\\.)+")),
+    ULIST               ("ul", Pattern.compile("\\+\\s")),
     UNKNOWN             ("unknown", Pattern.compile("")),
+    TEST("test", Pattern.compile("#")),
     NULL                ("null", Pattern.compile(""));
 
 
@@ -29,6 +42,13 @@ public enum Syntax{
         this.pattern = pattern;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Pattern getPattern() {
+        return pattern;
+    }
 
     static List<Syntax> getAll(){
         List<Syntax> l = new ArrayList<>();

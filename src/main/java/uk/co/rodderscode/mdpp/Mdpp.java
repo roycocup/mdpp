@@ -26,8 +26,11 @@ public class Mdpp {
      */
     public void parse() throws FileNotFoundException {
         Scanner scanner = new Scanner(inputFile);
+        //paragraphs
         scanner.useDelimiter(Pattern.compile("\\n"));
+        // get the parser
         Lexer lexer = new Lexer();
+
         int lineNum = 0;
         while(scanner.hasNext()){
             String paragraph = scanner.next();
