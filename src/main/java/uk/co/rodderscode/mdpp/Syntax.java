@@ -12,7 +12,7 @@ public enum Syntax{
 //    MULTILINEHEADER     ("", Pattern.compile("")),
 //    MARKDOWNCODESPAN    ("span", Pattern.compile("")),
 
-    HEADER              ("title", Pattern.compile("#*[\\s\\w]*")),
+    HEADER              ("title", Pattern.compile("^[#]{1,6}[\\w\\s]*", Pattern.MULTILINE)),
 
     HREF                ("link", Pattern.compile(
                         "\\[[\\w\\s]*]\\((\\b"+
@@ -28,10 +28,9 @@ public enum Syntax{
     PARAGRAPH           ("p", Pattern.compile("\\n\\n")),
     NEWLINE             ("break", Pattern.compile("\\n")),
     OLIST               ("ol", Pattern.compile("(\\d\\.)+")),
-    ULIST               ("ul", Pattern.compile("\\+\\s")),
-    UNKNOWN             ("unknown", Pattern.compile("")),
-    TEST("test", Pattern.compile("#")),
-    NULL                ("null", Pattern.compile(""));
+    ULIST               ("ul", Pattern.compile("\\+\\s"));
+//    UNKNOWN             ("unknown", Pattern.compile("")),
+//    NULL                ("null", Pattern.compile(""));
 
 
     private String name;

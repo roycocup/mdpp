@@ -5,6 +5,7 @@ import uk.co.rodderscode.utils.Printer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Lexer {
 
@@ -15,21 +16,17 @@ public class Lexer {
         // If this is an empty line (a line break)
             // create a node that represents a line break
 
-
-        boolean i = str.matches("[\\n\\r]+");
-        if (i)
-            Printer.pl(str+" "+i);
-
         // check the grammar for existence of rules.
         List<Syntax> allSyntaxes = Syntax.getAll();
 
         for (Syntax s : allSyntaxes) {
-            Matcher m = s.getPattern().matcher(str);
-            boolean b = m.matches();
-            if (b) {
-//                Printer.pl("Name: " + s.getName());
-//                Printer.pl("Pattern: "+s.getPattern());
+            Matcher matcher = s.getPattern().matcher(str);
+            StringBuilder s2 = new StringBuilder();
+            while (matcher.find()){
+                s2.append(matcher.group());
             }
+            if (s2.length() > 0)
+                Printer.pl(s2);
         }
 
         /*

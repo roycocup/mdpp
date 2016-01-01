@@ -1,6 +1,8 @@
 package uk.co.rodderscode.mdpp;
 
 import uk.co.rodderscode.doccreator.*;
+import uk.co.rodderscode.utils.Printer;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.*;
@@ -26,15 +28,15 @@ public class Mdpp {
      */
     public void parse() throws FileNotFoundException {
         Scanner scanner = new Scanner(inputFile);
-        //paragraphs
+        // Line by line
         scanner.useDelimiter(Pattern.compile("\\n"));
         // get the parser
         Lexer lexer = new Lexer();
 
         int lineNum = 0;
         while(scanner.hasNext()){
-            String paragraph = scanner.next();
-            AST.add(lexer.tokenize(paragraph, lineNum++));
+            String line = scanner.next();
+            AST.add(lexer.tokenize(line, lineNum++));
         }
 
 //        Printer.pl(AST);
