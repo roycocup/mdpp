@@ -22,6 +22,14 @@ public class Lexer {
 
         // The final return node
         Node node = new Node();
+        node.setLineNum(lineNum);
+        node.setOriginal(str);
+
+        // Catch newlines
+        if (str.length() < 1 ) {
+            node.setType(Node.NodeType.NEWLINE);
+            node.setValue("\n");
+        }
 
         for (Syntax s : allSyntaxes) {
             Matcher matcher = s.getPattern().matcher(str);
@@ -30,16 +38,16 @@ public class Lexer {
             while (matcher.find())
                 expression.append(matcher.group());
 
-            node.setLineNum(lineNum);
             if (expression.length() > 0) {
-                node.setValue(expression.toString());
                 node.setType(Node.NodeType.EXPRESSION);
-            } else {
-                node.setValue("\n");
-                node.setType(Node.NodeType.NEWLINE);
+                node.setValue(expression.toString());
             }
-            node.setOriginal(str);
+        }
 
+        // If at this point a node is still not set this may be just simple text
+        if (node.getValue() == null){
+            node.setType(Node.NodeType.TEXT);
+            node.setValue(str);
         }
 
         /*

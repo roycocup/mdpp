@@ -12,6 +12,7 @@ public class Node {
 
     enum NodeType{
         EXPRESSION,
+        TEXT,
         NEWLINE;
     }
 
@@ -45,7 +46,5 @@ public class Node {
         return value;
     }
 
-    public String getOriginal() {
-        return original;
-    }
+    public String getOriginal() {return original;}
 }
