@@ -8,6 +8,7 @@ public class Node {
     private NodeType type;
     private int lineNum;
     private String value;
+    private String original;
 
     enum NodeType{
         EXPRESSION,
@@ -26,5 +27,25 @@ public class Node {
 
     public void setValue(String value) {
         this.value = value;
+    }
+
+    public void setOriginal(String original) {
+        this.original = original;
+    }
+
+    public NodeType getType() {
+        return type;
+    }
+
+    public int getLineNum() {
+        return lineNum;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public String getOriginal() {
+        return original;
     }
 }

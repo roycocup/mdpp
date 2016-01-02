@@ -38,6 +38,7 @@ public class Lexer {
                 node.setValue("\n");
                 node.setType(Node.NodeType.NEWLINE);
             }
+            node.setOriginal(str);
 
         }
 

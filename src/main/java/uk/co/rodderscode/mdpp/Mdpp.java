@@ -39,7 +39,9 @@ public class Mdpp {
             AST.add(lexer.tokenize(line, lineNum++));
         }
 
-        Printer.pl(AST);
+        //Printer.pl(AST);
+        for (Node n : AST)
+            Printer.pl("This is a: "+n.getType()+" Find: "+n.getValue() );
     }
 
 
