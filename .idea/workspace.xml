@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3bbee6f-9d3b-4372-a6e2-666b7be64b58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Compiler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" afterPath="$PROJECT_DIR$/target/classes/uk/co/rodderscode/mdpp/Mdpp.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Compiler.java" afterPath="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Compiler.java" />
     </list>
     <ignored path="Jtex.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,12 +79,10 @@
       <file leaf-file-name="Compiler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Compiler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5341246">
-              <caret line="24" column="74" selection-start-line="22" selection-start-column="12" selection-end-line="24" selection-end-column="74" />
+            <state vertical-scroll-proportion="0.9124629">
+              <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#267#268#0" expanded="true" />
-                <element signature="e#297#298#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -191,8 +189,8 @@
         <option value="/Library/Java/JavaVirtualMachines/jdk1.8.0_66.jdk/Contents/Home/src.zip!/javax/swing/plaf/synth/SynthTableUI.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Lexer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Compiler.java" />
         <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Mdpp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Compiler.java" />
       </list>
     </option>
   </component>
@@ -376,6 +374,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="mdpp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MarkdownPlusPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MarkdownPlusPlus" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rodderscode" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="doccreator" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -932,7 +960,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451740975418</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="ready to start compiling to html part 2">
+      <created>1451741431582</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1451741431582</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1054,7 +1088,8 @@
     <MESSAGE value="Tests and stuff" />
     <MESSAGE value="This is working fine for AST." />
     <MESSAGE value="ready to start compiling to html" />
-    <option name="LAST_COMMIT_MESSAGE" value="ready to start compiling to html" />
+    <MESSAGE value="ready to start compiling to html part 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ready to start compiling to html part 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1272,6 +1307,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3560831">
           <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1329,6 +1365,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42284867">
           <caret line="31" column="22" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1445,12 +1482,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/uk/co/rodderscode/mdpp/Compiler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5341246">
-          <caret line="24" column="74" selection-start-line="22" selection-start-column="12" selection-end-line="24" selection-end-column="74" />
+        <state vertical-scroll-proportion="0.9124629">
+          <caret line="41" column="66" selection-start-line="41" selection-start-column="66" selection-end-line="41" selection-end-column="66" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#267#268#0" expanded="true" />
-            <element signature="e#297#298#0" expanded="true" />
           </folding>
         </state>
       </provider>
