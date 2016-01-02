@@ -41,6 +41,9 @@ public class Lexer {
             if (expression.length() > 0) {
                 node.setType(Node.NodeType.EXPRESSION);
                 node.setValue(expression.toString());
+                node.setToken(s);
+                // as soon as it finds a match, break out of the loop
+                break;
             }
         }
 
@@ -50,15 +53,6 @@ public class Lexer {
             node.setValue(str);
         }
 
-        /*
-        MdppScanner scanner = new MdppScanner(str);
-        while (scanner.hasNext()) {
-            char c = scanner.readNext();
-            convertToToken(c);
-        }
-        Syntax type = (tokens.size() > 0) ? tokens.get(0).getToken() : Syntax.NEWLINE;
-        Node node = new Node(type, lineNum, str, tokens);
-        */
 
         // There should not be more that one node to return
         return node;

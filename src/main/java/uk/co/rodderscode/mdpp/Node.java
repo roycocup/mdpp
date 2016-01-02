@@ -5,10 +5,11 @@ import java.util.ArrayList;
 
 public class Node {
 
-    private NodeType type;
-    private int lineNum;
-    private String value;
-    private String original;
+    private NodeType type   = null;
+    private int lineNum     = 0;
+    private String value    = null;
+    private String original = null;
+    private Syntax token    = null;
 
     enum NodeType{
         EXPRESSION,
@@ -34,6 +35,8 @@ public class Node {
         this.original = original;
     }
 
+    public void setToken(Syntax token) {this.token = token;}
+
     public NodeType getType() {
         return type;
     }
@@ -47,4 +50,6 @@ public class Node {
     }
 
     public String getOriginal() {return original;}
+
+    public Syntax getToken() {return token;}
 }
