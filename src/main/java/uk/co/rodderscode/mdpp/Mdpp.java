@@ -39,8 +39,6 @@ public class Mdpp {
             AST.add(lexer.tokenize(line, lineNum++));
         }
 
-        compile();
-
     }
 
 

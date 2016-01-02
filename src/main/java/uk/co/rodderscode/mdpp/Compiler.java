@@ -4,9 +4,11 @@ package uk.co.rodderscode.mdpp;
 import uk.co.rodderscode.doccreator.SpecialDocFactory;
 import uk.co.rodderscode.doccreator.SpecialDocument;
 import uk.co.rodderscode.doccreator.TargetType;
+import uk.co.rodderscode.utils.Printer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 
 public class Compiler {
@@ -19,6 +21,8 @@ public class Compiler {
     public void setAST(List<Node> AST) {this.AST = AST;}
 
     void read(){
+        Boolean listOpen = false;
+
         for (Node n : AST) {
             // if its simple text, just add text
             // if its a new line add it too
@@ -31,8 +35,23 @@ public class Compiler {
                             // close list
 
                 // is it a title
+                if (n.getToken() == Syntax.HEADER) {
                     // regex how many symbols it has
+                    int counter = 0;
+                    for (char c : n.getValue().toCharArray()){
+                        if (c == '#')
+                            counter++;
+                        else
+                            break; // break out of the loop if the next successive symbol is not a header
+                    }
                     // add to title with number of symbols
+                    document.title(
+                            n.getOriginal().substring(counter),
+                            counter
+                    );
+
+                }
+
                 // is it a list
                     // open a list tag
                     // include this one
@@ -42,6 +61,8 @@ public class Compiler {
                     // if this reference exist already throw error
 
         }
+
+        Printer.pl(document.getFinal());
     }
 
 
