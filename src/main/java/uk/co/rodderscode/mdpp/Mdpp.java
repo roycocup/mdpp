@@ -39,7 +39,7 @@ public class Mdpp {
             AST.add(lexer.tokenize(line, lineNum++));
         }
 
-//        Printer.pl(AST);
+        Printer.pl(AST);
     }
 
 
