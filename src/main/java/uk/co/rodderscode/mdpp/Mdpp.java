@@ -45,15 +45,10 @@ public class Mdpp {
 
 
     public void compile() {
-        //Printer.pl(AST);
-        for (Node n : AST) {
-            Printer.pl("This is a: " + n.getType() + " Find: " + n.getValue());
-            if (n.getType() == Node.NodeType.EXPRESSION)
-                Printer.pl("This is also an: " + n.getToken().toString());
-        }
+        Compiler compiler = new Compiler();
+        compiler.setAST(AST);
+        compiler.read();
     }
-
-    private void read(Node line){}
 
 
 }
