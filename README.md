@@ -1,10 +1,12 @@
 ### Overview
 
-This program is a compiler for a markdown++ language.
+This program is a compiler for Markdown language.
+
+Currently only supporting HTML target. The roadmap includes RTF and Tex
 
 ### Usage:
 
-Java jtex nameOfFile.md NameOfOutputFile.txt
+Java mdpp nameOfFile.md NameOfOutputFile.html
 
 
 ### Requirements
