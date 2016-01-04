@@ -5,21 +5,26 @@ import uk.co.rodderscode.utils.Printer;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.*;
 import java.util.regex.Pattern;
 
 public class Mdpp {
     private File inputFile      = null;
+    private File outputFile     = null;
     private List<Node> AST      = new ArrayList<>();
     private SpecialDocument document; // The final output document
 
 
     /**
      * Constructor
-     * @param file
+     * @param inputFile
+     * @param outputFile
      */
-    public Mdpp(File file) {
-        inputFile = file;
+    public Mdpp(File inputFile, File outputFile) {
+        this.inputFile = inputFile;
+        this.outputFile = outputFile;
     }
 
     /**
@@ -46,6 +51,23 @@ public class Mdpp {
         Compiler compiler = new Compiler();
         compiler.setAST(AST);
         compiler.read();
+        document = compiler.getFinal();
+        write();
+    }
+
+    private void write() {
+        PrintWriter writer = null;
+        try {
+            writer = new PrintWriter(outputFile, "UTF-8");
+            writer.write(document.getFinal());
+            Printer.pl("Job done!");
+        }catch(FileNotFoundException | UnsupportedEncodingException e){
+            System.err.println(Arrays.toString(e.getStackTrace()));
+        }finally {
+            if (writer != null)
+                writer.close();
+        }
+
     }
 
 

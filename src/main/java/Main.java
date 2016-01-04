@@ -14,13 +14,11 @@ public class Main {
         inputFilename = args[0];
         outputFilename = args[1];
 
-
-
         try {
             if( !isMarkdown(inputFilename) )
                 throw new Exception("File is not valid markdown file (.md)");
 
-            Mdpp mdpp = new Mdpp(new File (inputFilename));
+            Mdpp mdpp = new Mdpp(new File (inputFilename), new File(outputFilename));
             mdpp.parse();
             mdpp.compile();
         }catch (Exception e){

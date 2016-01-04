@@ -88,8 +88,10 @@ public class Compiler {
 
         }
 
-        Printer.pl(document.getFinal());
     }
 
+    public SpecialDocument getFinal(){
+        return document;
+    }
 
 }
