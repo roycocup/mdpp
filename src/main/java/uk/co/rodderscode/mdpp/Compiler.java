@@ -64,7 +64,7 @@ public class Compiler {
 
                 }
                 // is it a list
-                if (n.getToken() == Syntax.ULIST || n.getToken() == Syntax.OLIST ) {
+                if ( (n.getToken() == Syntax.ULIST || n.getToken() == Syntax.OLIST) && listOpen == false ) {
                     // open a list tag and include this one
                     list.add(n.getOriginal().substring(n.getValue().length()));
                     listOpen = true;
