@@ -1,6 +1,10 @@
 package uk.co.rodderscode.doccreator;
 
 
+import uk.co.rodderscode.utils.Printer;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HtmlCreator implements SpecialDocument {
 
@@ -35,17 +39,22 @@ public class HtmlCreator implements SpecialDocument {
     }
 
     @Override
+    public void list(ArrayList<String> str) {
+        StringBuilder s = new StringBuilder("\n<ul>");
+
+        for (String targetS : str){
+            s.append("\n\t<li>" + targetS + "</li>");
+        }
+
+        s.append("\n</ul>\n");
+        document.append(s);
+    }
+
+    @Override
     public void text(String str){
         add(str);
     }
 
-    @Override
-    public void list(String[] str){
-        StringBuilder s = new StringBuilder("\n<ul>");
-        s.append("<li>"+str+"</li>");
-        s.append("</ul>\n");
-        document.append(s);
-    }
 
     public String getFinal(){
         add("\n</body>\n</html>");
