@@ -4,18 +4,21 @@ package uk.co.rodderscode.mdpp;
 import uk.co.rodderscode.doccreator.SpecialDocFactory;
 import uk.co.rodderscode.doccreator.SpecialDocument;
 import uk.co.rodderscode.doccreator.TargetType;
-import uk.co.rodderscode.utils.Printer;
+
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Pattern;
+
 
 
 public class Compiler {
 
     private List<Node> AST = new ArrayList<>();
     private SpecialDocument document = SpecialDocFactory.getInstance(TargetType.HTML);
+
+    // A record for a html list to be implemented later.
     private ArrayList<String> list = new ArrayList<>();
+    private Syntax listType = Syntax.ULIST;
 
     public Compiler() {}
 
@@ -41,7 +44,7 @@ public class Compiler {
                         list.add(n.getOriginal().substring(n.getValue().length()));
                     } else {
                         // no - close list
-                        document.list(list);
+                        document.list(list, listType);
                         listOpen = false;
                     }
                 }
@@ -67,6 +70,7 @@ public class Compiler {
                 if ( (n.getToken() == Syntax.ULIST || n.getToken() == Syntax.OLIST) && listOpen == false ) {
                     // open a list tag and include this one
                     list.add(n.getOriginal().substring(n.getValue().length()));
+                    listType = n.getToken();
                     listOpen = true;
                 }
                 // is it a link

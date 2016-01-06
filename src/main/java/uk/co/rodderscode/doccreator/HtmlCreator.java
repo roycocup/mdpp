@@ -1,6 +1,7 @@
 package uk.co.rodderscode.doccreator;
 
 
+import uk.co.rodderscode.mdpp.Syntax;
 import uk.co.rodderscode.utils.Printer;
 
 import java.util.ArrayList;
@@ -39,14 +40,15 @@ public class HtmlCreator implements SpecialDocument {
     }
 
     @Override
-    public void list(ArrayList<String> str) {
-        StringBuilder s = new StringBuilder("\n<ul>");
+    public void list(ArrayList<String> str, Syntax listType) {
+        String tag = (listType == Syntax.OLIST) ? "<ol>" : "ul";
+        StringBuilder s = new StringBuilder("\n"+tag);
 
         for (String targetS : str){
             s.append("\n\t<li>" + targetS + "</li>");
         }
 
-        s.append("\n</ul>\n");
+        s.append("\n"+tag+"\n");
         document.append(s);
     }
 
