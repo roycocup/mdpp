@@ -2,7 +2,7 @@
 
 This program is a compiler for Markdown language.
 
-Currently only supporting HTML target. The roadmap includes RTF and Tex
+Currently only supporting HTML target. The roadmap includes RTF and PDF
 
 ### Usage:
 
